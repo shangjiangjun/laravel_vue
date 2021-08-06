@@ -13,8 +13,14 @@ export default new VueRouter({
 
         {
             name: 'lists',
-            path: '/lists',
+            path: 'lists',
             component: resolve => void(require(['../pages/Lists.vue'], resolve))
+        },
+
+        {
+            name: 'info',
+            path: '/info/:id',
+            component: resolve => void(require(['../pages/Info.vue'], resolve)),
         }
     ]
 });

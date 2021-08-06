@@ -1,14 +1,10 @@
 <template>
-    <div class="lists-container">
+    <div class="info-container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <ul id="example-1">
-                    <li v-for="item in lists" :key="item.id">
-                        <router-link :to="{ name: 'info', params: { id : item.id} }">
-                            {{ item.name }} - {{ item.tel }}
-                        </router-link>
-                    </li>
-                </ul>
+                <div v-if="info">
+                    {{ info.name }} - {{ info.tel }}
+                </div>
             </div>
         </div>
     </div>
@@ -22,18 +18,23 @@
         },
         data() {
             return {
-                lists: []
+                id: 0,
+                infoStatus: false,
+                info: []
             }
         },
         created() {
-            this.onGetLists();
+            this.onGetInfo();
         },
         methods: {
-            onGetLists() {
-                listApi.getLists().then(res =>  {
+            onGetInfo() {
+                let id = this.$route.params.id
+                this.id = id;
+                listApi.getInfo(id).then(res =>  {
                     let result = res.data
                     if (result.status) {
-                        this.lists = result.data;
+                        this.infoStatus = true;
+                        this.info = result.data;
                     }
                 })
             }
@@ -41,7 +42,7 @@
     }
 </script>
 <style scoped>
-    .lists-container {
+    .info-container {
         width: 100%;
         height: 100%;
     }

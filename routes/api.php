@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 */
 Route::group(['prefix' => 'v1'], function(){
     Route::get('/lists', 'Api\ListsController@lists');
-    Route::get('/lists/{id}/info', 'Api\ListsController@info');
+    Route::get('/info/{id}', 'Api\ListsController@info');
 });
 
 

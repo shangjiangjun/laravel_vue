@@ -15,6 +15,6 @@ export default {
      * GET /api/v1/infos/{infoID}
      */
     getInfo: function( infoID ){
-        return axios.get( ROAST_CONFIG.API_URL + '/lists/' + infoID );
+        return axios.get( ROAST_CONFIG.API_URL + '/info/' + infoID );
     }
 }
