@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="index-container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -21,3 +21,9 @@
         }
     }
 </script>
+<style scoped>
+    .index-container {
+        width: 100%;
+        height: 100%;
+    }
+</style>
