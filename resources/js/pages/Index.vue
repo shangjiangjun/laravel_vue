@@ -16,8 +16,31 @@
 
 <script>
     export default {
+        beforeCreate() {
+            console.log('beforeCreate')
+        },
+        created() {
+            console.log('created')
+        },
+        beforeMount() {
+            console.log('beforeMount')
+        },
         mounted() {
-            console.log('Index.')
+            console.log('mounted')
+        },
+        beforeUpdate() {
+            console.log('beforeUpdate')
+        },
+        updated() {
+            console.log('updated')
+        },
+        beforeDestroy() {
+            // 跳转页面之前
+            console.log('beforeDestroy')
+        },
+        destroyed() {
+            // 跳转页面之后
+            console.log('destroyed')
         }
     }
 </script>

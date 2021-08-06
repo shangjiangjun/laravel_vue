@@ -26,8 +26,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  beforeCreate: function beforeCreate() {
+    console.log('beforeCreate');
+  },
+  created: function created() {
+    console.log('created');
+  },
+  beforeMount: function beforeMount() {
+    console.log('beforeMount');
+  },
   mounted: function mounted() {
-    console.log('Index.');
+    console.log('mounted');
+  },
+  beforeUpdate: function beforeUpdate() {
+    console.log('beforeUpdate');
+  },
+  updated: function updated() {
+    console.log('updated');
+  },
+  beforeDestroy: function beforeDestroy() {
+    // 跳转页面之前
+    console.log('beforeDestroy');
+  },
+  destroyed: function destroyed() {
+    // 跳转页面之后
+    console.log('destroyed');
   }
 });
 
