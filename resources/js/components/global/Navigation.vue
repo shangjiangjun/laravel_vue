@@ -1,36 +1,34 @@
-<template>
-    <div>
-        <h1>Hello, {{ msg }}!</h1>
-        <navigation></navigation>
-        <!--路由引入的组件将在这里被渲染  公共文件 -->
-        <router-view></router-view>
-    </div>
-</template>
 
+<template>
+    <nav class="top-navigation">
+        <router-link :to="{ name: 'index'}">
+            <span class="logo">Logo</span>
+        </router-link>
+
+        <ul class="links">
+            <li>
+                <router-link :to="{ name: 'lists' }">
+                    列表
+                </router-link>
+            </li>
+        </ul>
+    </nav>
+</template>
 <script>
-    import Navigation from './components/global/Navigation.vue';
     export default {
-        components: {
-            Navigation
-        },
-        data() {
-            return {
-                msg: 'Vue'
-            }
-        }
+
     }
 </script>
-
 <style lang="scss">
-    @import '../sass/_variables.scss';
+    @import '~@/_variables.scss';
 
     nav.top-navigation{
         background-color: $white;
         height: 50px;
-        border-bottom: 2px solid $blue;
+        border-bottom: 2px solid $dark-color;
 
         span.logo{
-            border-right: 1px solid $blue;
+            border-right: 1px solid $dark-color;
             display: block;
             float: left;
             height: 50px;
@@ -38,11 +36,11 @@
             padding: 0px 20px 0px 20px;
             font-family: 'Josefin Sans', sans-serif;
             font-weight: bold;
-            color: $blue;
+            color: $dark-color;
 
             &:hover{
                 color: white;
-                background-color: $blue;
+                background-color: $dark-color;
             }
         }
 
@@ -61,7 +59,7 @@
                     color: $black;
 
                     &:hover{
-                        color: $blue;
+                        color: $dark-color;
                     }
                 }
             }
@@ -81,4 +79,3 @@
 
     }
 </style>
-

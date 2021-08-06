@@ -21,6 +21,7 @@
 </template>
 
 <script>
+    import listApi from '../api/lists.js'
     export default {
         mounted() {
             console.log('Lists.')
@@ -44,6 +45,16 @@
                     label: '葡萄'
                 }],
                 value: ''
+            }
+        },
+        created() {
+            this.onGetLists();
+        },
+        methods: {
+            onGetLists() {
+                listApi.getLists().then(res =>  {
+                    console.log(res)
+                })
             }
         }
     }
