@@ -45,6 +45,7 @@
         }
 
         ul.links{
+            margin: 0;
             display: block;
             float: left;
 

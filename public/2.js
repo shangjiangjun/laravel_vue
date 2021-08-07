@@ -25,6 +25,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeCreate: function beforeCreate() {
     console.log('beforeCreate');
@@ -51,6 +59,16 @@ __webpack_require__.r(__webpack_exports__);
   destroyed: function destroyed() {
     // 跳转页面之后
     console.log('destroyed');
+  },
+  data: function data() {
+    return {
+      iconStatus: false
+    };
+  },
+  methods: {
+    checkStatus: function checkStatus() {
+      this.iconStatus = true;
+    }
   }
 });
 
@@ -120,32 +138,57 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "index-container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
+  return _c("div", { staticClass: "index-container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _vm._v("Example Component")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _vm._v("\n                    绑定事件，触发事件\n                ")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-sm btn-primary",
+                on: { click: _vm.checkStatus }
+              },
+              [_vm._v("按钮")]
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
+            _c("div", { staticClass: "card-text" }, [
+              _vm._v(_vm._s(_vm.iconStatus))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-sm btn-primary",
+                on: {
+                  click: function($event) {
+                    _vm.iconStatus = !_vm.iconStatus
+                  }
+                }
+              },
+              [_vm._v("!按钮")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-text" }, [
+              _vm._v(_vm._s(_vm.iconStatus))
             ])
           ])
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

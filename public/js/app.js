@@ -9999,7 +9999,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "nav.top-navigation {\n  background-color: #ffffff;\n  height: 50px;\n  border-bottom: 2px solid #333333;\n}\nnav.top-navigation span.logo {\n  border-right: 1px solid #333333;\n  display: block;\n  float: left;\n  height: 50px;\n  line-height: 50px;\n  padding: 0px 20px 0px 20px;\n  font-family: \"Josefin Sans\", sans-serif;\n  font-weight: bold;\n  color: #333333;\n}\nnav.top-navigation span.logo:hover {\n  color: white;\n  background-color: #333333;\n}\nnav.top-navigation ul.links {\n  display: block;\n  float: left;\n}\nnav.top-navigation ul.links li {\n  display: inline-block;\n  list-style-type: none;\n  line-height: 50px;\n}\nnav.top-navigation ul.links li a {\n  font-family: \"Lato\", sans-serif;\n  font-weight: bold;\n  color: #000000;\n}\nnav.top-navigation ul.links li a:hover {\n  color: #333333;\n}\nnav.top-navigation div.right {\n  float: right;\n}\nnav.top-navigation div.right img.avatar {\n  width: 40px;\n  height: 40px;\n  border-radius: 40px;\n  margin-top: 5px;\n  margin-right: 10px;\n}", ""]);
+exports.push([module.i, "nav.top-navigation {\n  background-color: #ffffff;\n  height: 50px;\n  border-bottom: 2px solid #333333;\n}\nnav.top-navigation span.logo {\n  border-right: 1px solid #333333;\n  display: block;\n  float: left;\n  height: 50px;\n  line-height: 50px;\n  padding: 0px 20px 0px 20px;\n  font-family: \"Josefin Sans\", sans-serif;\n  font-weight: bold;\n  color: #333333;\n}\nnav.top-navigation span.logo:hover {\n  color: white;\n  background-color: #333333;\n}\nnav.top-navigation ul.links {\n  margin: 0;\n  display: block;\n  float: left;\n}\nnav.top-navigation ul.links li {\n  display: inline-block;\n  list-style-type: none;\n  line-height: 50px;\n}\nnav.top-navigation ul.links li a {\n  font-family: \"Lato\", sans-serif;\n  font-weight: bold;\n  color: #000000;\n}\nnav.top-navigation ul.links li a:hover {\n  color: #333333;\n}\nnav.top-navigation div.right {\n  float: right;\n}\nnav.top-navigation div.right img.avatar {\n  width: 40px;\n  height: 40px;\n  border-radius: 40px;\n  margin-top: 5px;\n  margin-right: 10px;\n}", ""]);
 
 // exports
 
@@ -117776,7 +117776,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     }
   }, {
     name: 'lists',
-    path: 'lists',
+    path: '/lists',
     component: function component(resolve) {
       return void __webpack_require__.e(/*! AMD require */ 1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/Lists.vue */ "./resources/js/pages/Lists.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
     }

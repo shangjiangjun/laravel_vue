@@ -22,6 +22,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
@@ -29,7 +54,9 @@ __webpack_require__.r(__webpack_exports__);
     return {
       id: 0,
       infoStatus: false,
-      info: []
+      info: [],
+      name: '',
+      tel: ''
     };
   },
   created: function created() {
@@ -48,6 +75,16 @@ __webpack_require__.r(__webpack_exports__);
           _this.infoStatus = true;
           _this.info = result.data;
         }
+      });
+    },
+    submitNewCafe: function submitNewCafe() {
+      _api_lists_js__WEBPACK_IMPORTED_MODULE_0__["default"].newInfo({
+        id: this.id,
+        name: this.name,
+        tel: this.tel
+      }).then(function (res) {
+        console.log(res);
+        var result = res.data;
       });
     }
   }
@@ -133,6 +170,102 @@ var render = function() {
               )
             ])
           : _vm._e()
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("form", [
+              _c("div", { staticClass: "grid-container" }, [
+                _c("div", { staticClass: "grid-x grid-padding-x" }, [
+                  _c(
+                    "div",
+                    { staticClass: "large-12 medium-12 small-12 cell" },
+                    [
+                      _c("label", [
+                        _vm._v(
+                          "名称\n                                        "
+                        ),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.name,
+                              expression: "name"
+                            }
+                          ],
+                          attrs: { type: "text", placeholder: "名称" },
+                          domProps: { value: _vm.name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.name = $event.target.value
+                            }
+                          }
+                        })
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "large-12 medium-12 small-12 cell" },
+                    [
+                      _c("label", [
+                        _vm._v(
+                          "电话号码\n                                        "
+                        ),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.tel,
+                              expression: "tel"
+                            }
+                          ],
+                          attrs: { type: "text", placeholder: "电话号码" },
+                          domProps: { value: _vm.tel },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.tel = $event.target.value
+                            }
+                          }
+                        })
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "large-12 medium-12 small-12 cell" },
+                    [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-primary",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              return _vm.submitNewCafe()
+                            }
+                          }
+                        },
+                        [_vm._v("提交")]
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
       ])
     ])
   ])
@@ -167,10 +300,17 @@ __webpack_require__.r(__webpack_exports__);
   },
 
   /**
-   * GET /api/v1/infos/{infoID}
+   * GET /api/v1/info/{infoID}
    */
   getInfo: function getInfo(infoID) {
     return axios.get(_config_js__WEBPACK_IMPORTED_MODULE_0__["ROAST_CONFIG"].API_URL + '/info/' + infoID);
+  },
+
+  /**
+   * POST /api/v1/info
+   */
+  newInfo: function newInfo(params) {
+    return axios.post(_config_js__WEBPACK_IMPORTED_MODULE_0__["ROAST_CONFIG"].API_URL + '/info', params);
   }
 });
 

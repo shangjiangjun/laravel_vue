@@ -182,10 +182,17 @@ __webpack_require__.r(__webpack_exports__);
   },
 
   /**
-   * GET /api/v1/infos/{infoID}
+   * GET /api/v1/info/{infoID}
    */
   getInfo: function getInfo(infoID) {
     return axios.get(_config_js__WEBPACK_IMPORTED_MODULE_0__["ROAST_CONFIG"].API_URL + '/info/' + infoID);
+  },
+
+  /**
+   * POST /api/v1/info
+   */
+  newInfo: function newInfo(params) {
+    return axios.post(_config_js__WEBPACK_IMPORTED_MODULE_0__["ROAST_CONFIG"].API_URL + '/info', params);
   }
 });
 

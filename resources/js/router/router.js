@@ -13,7 +13,7 @@ export default new VueRouter({
 
         {
             name: 'lists',
-            path: 'lists',
+            path: '/lists',
             component: resolve => void(require(['../pages/Lists.vue'], resolve))
         },
 

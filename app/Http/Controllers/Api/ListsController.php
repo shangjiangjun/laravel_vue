@@ -26,4 +26,23 @@ class ListsController extends Controller
             'data'      => $info
         ]);
     }
+
+    /**
+     * path: info
+     * method: post
+     * Url: saveInfo
+     * params: {
+        id  : ID,
+        name: 姓名,
+        tel : 电话
+     * }
+     */
+    public function saveInfo(Request $request)
+    {
+        $data = [];
+        $data['id'] = $request->input('id', 0);
+        $data['name'] = $request->input('name', '');
+        $data['tel'] = $request->input('tel', '');
+        return response()->json($data, 201);
+    }
 }

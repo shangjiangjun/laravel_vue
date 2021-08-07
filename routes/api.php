@@ -15,6 +15,8 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => 'v1'], function(){
     Route::get('/lists', 'Api\ListsController@lists');
     Route::get('/info/{id}', 'Api\ListsController@info');
+    // 新增信息
+    Route::post('/info', 'Api\ListsController@saveInfo');
 });
 
 
